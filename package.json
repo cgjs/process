@@ -27,7 +27,7 @@
     "url": "https://github.com/cgjs/process/issues"
   },
   "homepage": "https://github.com/cgjs/process#readme",
-  "dependencies": {
-    "cgjs": "^0.1.3"
+  "devDependencies": {
+    "cgjs": "^0.1.9"
   }
 }
