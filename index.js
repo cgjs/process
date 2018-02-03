@@ -39,15 +39,13 @@ const process = Object.defineProperties(
       return lazy('argv0', File.new_for_path(constants.PROGRAM_EXE).get_basename());
     },
     get env() {
-      const environ = {};
-      GLib.get_environ().forEach(info => {
-        const p = info.indexOf('=');
-        const key = info.slice(0, p);
-        if (!/^npm/.test(key)) {
-          environ[key] = info.slice(p + 1);
-        }
-      });
-      return lazy('env', environ);
+      return lazy('env', GLib.listenv().reduce(
+        (env, key) => {
+          env[key] = GLib.getenv(key);
+          return env;
+        },
+        {}
+      ));
     },
     get pid() {
       return lazy('pid', new Gio.Credentials().get_unix_pid());
