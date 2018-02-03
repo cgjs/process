@@ -1,13 +1,20 @@
 # @cgjs/process [![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/licenses/ISC)
 
-process core module for cgjs
+process core module for [cgjs](https://github.com/cgjs/cgjs)
 
-#### How to contribute
+### Currently usable
 
-The [@cgjs/timers](https://github.com/cgjs/cgjs-timers) module is the most basic example of a structure suitable to develop and test [cgjs](https://github.com/cgjs/cgjs) core.
-
-#### APIs
-
-  * [Gnome API Reference](https://developer.gnome.org/references) for GJS and Gtk internals
-  * [NodeJS API Reference](https://nodejs.org/api/documentation.html)
-  * [GJS Examples](https://github.com/optimisme/gjs-examples)
+  * `abort()`
+  * `arch`, via `require('os').arch()`
+  * `argv`
+  * `argv0`
+  * `cwd()`
+  * `env`
+  * `exit([code])`
+  * `nexttick(callback[, ...args])`, via `setImmediate(...)`
+  * `pid`, via `new Gio.Credentials().get_unix_pid()`. Not sure yet it works for macOS
+  * `platform`, via `require('os').platform()`
+  * `title`, via `GLib.get_prgname()`
+  * `version`, via cgjs `package.json` version
+  * `uptime`, via `Date.now() - START_TIME`
+  * `versions()`, via cgjs `package.json` dependencies
