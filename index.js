@@ -59,6 +59,12 @@ const process = Object.defineProperties(
     get version() {
       return lazy('version', require('cgjs/package.json').version);
     },
+    get versions() {
+      return lazy('versions', Object.assign(
+        {cgjs: process.version},
+        require('cgjs/package.json').dependencies
+      ));
+    },
 
     // methods
     abort() {
@@ -79,12 +85,6 @@ const process = Object.defineProperties(
     },
     uptime() {
       return (Date.now() - TIME) / 1000;
-    },
-    versions() {
-      return Object.assign(
-        {cgjs: process.version},
-        require('cgjs/package.json').dependencies
-      );
     }
   })
 );
