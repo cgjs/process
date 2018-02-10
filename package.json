@@ -1,6 +1,6 @@
 {
   "name": "@cgjs/process",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "process core module for cgjs",
   "scripts": {
     "test": "cgjs ./test"
